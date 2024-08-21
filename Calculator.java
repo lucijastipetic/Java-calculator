@@ -1,5 +1,6 @@
 package calculator;
 
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
@@ -41,6 +42,7 @@ public class Calculator {
 			gbc.weighty = 1.0;
 			
 			JButton b = new JButton(Integer.toString(3*(i-1)+1));
+			b.setFont(new Font("Arial", Font.BOLD, 15));
 			b.addActionListener(e);
 			gb.setConstraints(b, gbc);
 			content.add(b);
@@ -59,6 +61,7 @@ public class Calculator {
 				gbc.weighty = 1.0;
 				
 				JButton b = new JButton(Integer.toString(3*(i-1)+j));
+				b.setFont(new Font("Arial", Font.BOLD, 15));
 				b.addActionListener(e);
 				gb.setConstraints(b, gbc);
 				content.add(b);
@@ -79,6 +82,7 @@ public class Calculator {
 			gbc.weighty = 1.0;
 			
 			JButton b = new JButton(arr[i]);
+			b.setFont(new Font("Arial", Font.BOLD, 15));
 			b.addActionListener(e);
 			gb.setConstraints(b, gbc);
 			content.add(b);
@@ -96,6 +100,7 @@ public class Calculator {
 			gbc.weighty = 1.0;
 			
 			JButton b = new JButton(arr2[i-1]);
+			b.setFont(new Font("Arial", Font.BOLD, 15));
 			b.addActionListener(e);
 			gb.setConstraints(b, gbc);
 			content.add(b);
@@ -112,6 +117,7 @@ public class Calculator {
 		gbc.weighty = 1.0;
 		
 		JButton b = new JButton("CLEAR");
+		b.setFont(new Font("Arial", Font.BOLD, 15));
 		b.addActionListener(e);
 		gb.setConstraints(b, gbc);
 		content.add(b);
@@ -127,6 +133,7 @@ public class Calculator {
 		gbc.weighty = 1.0;
 		
 		JButton b2 = new JButton("BACK");
+		b2.setFont(new Font("Arial", Font.BOLD, 15));
 		b2.addActionListener(e);
 		gb.setConstraints(b2, gbc);
 		content.add(b2);
@@ -136,6 +143,8 @@ public class Calculator {
 		frame.setContentPane(content);
 		frame.setSize(600, 300);
 		frame.setVisible(true);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
 	}
 	
 	public String getDisplayValue() {
@@ -150,3 +159,5 @@ public class Calculator {
 		Calculator c = new Calculator();
 	}
 }
+
+
