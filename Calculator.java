@@ -1,5 +1,6 @@
 package calculator;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -12,11 +13,13 @@ public class Calculator {
 	private JTextField display = new JTextField();
 	private GridBagLayout gb = new GridBagLayout();
 	
+	@SuppressWarnings("static-access")
 	public Calculator() {
 		content.setLayout(gb);
 		Engine e = new Engine(this);
 		
 		//za display
+		display.setFont(new Font("Calibri", Font.PLAIN, 30));
 				GridBagConstraints gbc = new GridBagConstraints();
 				gbc.gridx = 0;
 				gbc.gridy = 0;
@@ -42,6 +45,8 @@ public class Calculator {
 			gbc.weighty = 1.0;
 			
 			JButton b = new JButton(Integer.toString(3*(i-1)+1));
+			b.setBackground(Color.lightGray);
+			b.setForeground(Color.black);
 			b.setFont(new Font("Arial", Font.BOLD, 15));
 			b.addActionListener(e);
 			gb.setConstraints(b, gbc);
@@ -61,6 +66,8 @@ public class Calculator {
 				gbc.weighty = 1.0;
 				
 				JButton b = new JButton(Integer.toString(3*(i-1)+j));
+				b.setBackground(Color.lightGray);
+				b.setForeground(Color.black);
 				b.setFont(new Font("Arial", Font.BOLD, 15));
 				b.addActionListener(e);
 				gb.setConstraints(b, gbc);
@@ -82,6 +89,8 @@ public class Calculator {
 			gbc.weighty = 1.0;
 			
 			JButton b = new JButton(arr[i]);
+			b.setBackground(Color.lightGray);
+			b.setForeground(Color.black);
 			b.setFont(new Font("Arial", Font.BOLD, 15));
 			b.addActionListener(e);
 			gb.setConstraints(b, gbc);
@@ -100,6 +109,8 @@ public class Calculator {
 			gbc.weighty = 1.0;
 			
 			JButton b = new JButton(arr2[i-1]);
+			b.setBackground(Color.lightGray);
+			b.setForeground(Color.black);
 			b.setFont(new Font("Arial", Font.BOLD, 15));
 			b.addActionListener(e);
 			gb.setConstraints(b, gbc);
@@ -117,6 +128,8 @@ public class Calculator {
 		gbc.weighty = 1.0;
 		
 		JButton b = new JButton("CLEAR");
+		b.setBackground(Color.lightGray);
+		b.setForeground(Color.black);
 		b.setFont(new Font("Arial", Font.BOLD, 15));
 		b.addActionListener(e);
 		gb.setConstraints(b, gbc);
@@ -133,6 +146,8 @@ public class Calculator {
 		gbc.weighty = 1.0;
 		
 		JButton b2 = new JButton("BACK");
+		b2.setBackground(Color.lightGray);
+		b2.setForeground(Color.black);
 		b2.setFont(new Font("Arial", Font.BOLD, 15));
 		b2.addActionListener(e);
 		gb.setConstraints(b2, gbc);
@@ -156,8 +171,7 @@ public class Calculator {
 	}
 	
 	public static void main(String[] args) {
-		Calculator c = new Calculator();
+		new Calculator();
 	}
 }
-
 
